@@ -1,0 +1,86 @@
+body {
+  background: #e5e2cc;
+}
+table,
+th,
+td {
+  table-layout: fixed;
+  width: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
+  border: 1px solid black;
+}
+table {
+  table-layout: fixed;
+  width: 200px;
+}
+.flex-structure {
+  border: 1px solid black;
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.P_small {
+  width: 80px;
+  height: 80px;
+}
+.P_small:hover {
+  border: 2px solid red;
+}
+#Y_P_box {
+  width: 100%;
+}
+#P_box,
+#Y_box {
+  margin: 20px;
+  width: 35vw;
+  height: 90vh;
+  /* border: 2px solid black; */
+  display: inline-block;
+  vertical-align: top;
+
+  /* float: right; */
+}
+
+#R1_box,
+#R2_box {
+  margin: 20px;
+  width: 35vw;
+  height: 40vh;
+  /* border: 2px solid black; */
+  display: inline-block;
+  vertical-align: top;
+
+  /* float: right; */
+}
+.big_img {
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid black;
+}
+
+#Y_table {
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+#R1,
+#R2 {
+  border: 2px solid black;
+}
+
+#welcome {
+  border: 2px solid black;
+}
+#welcome_div {
+  background-color: transparent;
+}

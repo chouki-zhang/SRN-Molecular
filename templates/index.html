@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block head %}
+<title>Home</title>
+{% endblock %} {% block body %}
+<br />
+<h1>SRN molecular design</h1>
+<br />
+<main role="main" id="welcome">
+  <div class="jumbotron" id="welcome_div">
+    <div class="col-sm-8 mx-auto">
+      <h1>Welcome !</h1>
+      <p align="justify">
+        SRN(Synthetic-routes-navigated) molecular design project is a digital
+        laboratory for molecular design. Here you can try chemical reaction,
+        property analysis and so on. Everything will be done by AI, all you need
+        to do is typing the ingredients for the reaction!
+      </p>
+      <!-- <img src="./images/home_intro.png" alt="" /> -->
+      <p>
+        Go visit us at out github
+        <a
+          href="https://github.com/yoshida-lab/XenonPy/blob/9aca8da4839b574bdda2982e89cbff0e73e33acb/docs/source/index.rst"
+          >our github</a
+        >.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="/posts/new" role="button"
+          >Try reaction online! &raquo;</a
+        >
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

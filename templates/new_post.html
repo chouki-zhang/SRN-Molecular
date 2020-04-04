@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block head %}
+<title>New Reaction</title>
+{% endblock %} {% block body %}
+
+<h1>New reaction</h1>
+<hr />
+<h3>Reactant pool examples:</h3>
+
+<p>
+  CCS(=O)(=O)Cl.OCCBr<br />
+  CC(C)CS(=O)(=O)Cl.OCCCl<br />
+  CCN(CC)CC.O.O=C(Cl)Oc1ccccc1<br />
+  Nc1cc2c(cc1Br)nc1n2CCC1.[C-]#N<br />
+  CC(C)(C)NNC1(C#N)CCCCCC1
+</p>
+<hr />
+<h2>Create New Reaction:</h2>
+<form action="/posts/new" , method="POST">
+  <br />
+
+  <label for="R1">The first reactant:</label>
+  <input
+    class="form-control"
+    type="text"
+    name="R1"
+    id="R1"
+    placeholder="the first reactant"
+    value="CCC(=O)CNc1cnccc1-c1ccc(F)cc1OC"
+    aria-label="Enter R1"
+  />
+  <br />
+  <label for="R2">The second reactant:</label>
+
+  <input
+    class="form-control"
+    type="text"
+    name="R2"
+    id="R2"
+    placeholder="the second reactant"
+    value="N#Cc1ccc(F)c(C(=O)Cl)c1"
+    aria-label="Enter R2"
+  />
+  <br />
+  <label for="note">Note:</label>
+  <textarea
+    class="form-control"
+    name="note"
+    placeholder="Note"
+    id="note"
+    rows="3"
+  ></textarea>
+
+  <br />
+  <input class="btn btn-success" type="submit" value="Synthesis" />
+</form>
+<hr />
+
+<a href="/">Home</a>
+{% endblock %}

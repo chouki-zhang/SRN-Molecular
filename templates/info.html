@@ -1,0 +1,156 @@
+{% extends 'base.html' %} {% block head %}
+<title>Reaction information</title>
+{% endblock %} {% block body %}
+<div>
+<h1>Reaction id: {{ post.id }}</h1>
+</div>
+<form action="/posts/info/{{ post.id }}" , method="POST">
+ <input class="btn btn-primary float-right" type="submit" value="Analysis" />
+</form>
+<br />
+<h3>Note:</h3>
+<p>{{ post.note }}</p>
+<br />
+<hr>
+{% if post.analysis == 0 %}
+<p>Reactant one: {{post.R1}}</p>
+<p>Reactant two: {{post.R2}}</p>
+<p>Product 1: {{post.P1}}</p>
+<p>Product 2: {{post.P2}}</p>
+<p>Product 3: {{post.P3}}</p>
+<p>Product 4: {{post.P4}}</p>
+<p>Product 5: {{post.P5}}</p>
+{% endif %}
+{% if post.analysis == 1 %}
+<h3>Reactants:</h3>
+
+<div id="R_box">
+  <div id="R1_box">
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}R1.png"
+      alt=""
+      height="300"
+      width="300"
+      id="R1"
+    />
+    <h5>First reactant:</h3>
+    <p>"{{ post.R1 }}"</p>
+  </div>
+  <div id="R2_box">
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}R2.png"
+      alt=""
+      height="300"
+      width="300"
+      id="R2"
+    />
+    <h5>Second reactant:</h3>
+    <p>"{{ post.R2 }}"</p>
+  </div>
+</div>
+<br />
+<hr>
+<h3>Products:</h3>
+<div id="Y_P_box">
+  <div id="Y_box">
+    <!-- <div class="flex-structure" id="Y_box"> -->
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}P1y.png"
+      alt=""
+      id="Y_plot"
+      class="big_img"
+    />
+    <!-- </div> -->
+    <!-- <table id="Y_table">
+
+      <tr>
+        <th>Dielectric Constant</th>
+        <td><span id="dc_value">0</span></td>
+      </tr>
+      <tr>
+        <th>Glass Transition Temperature</th>
+        <td><span id="gtt_value">0</span></td>
+      </tr>
+    </table> -->
+
+    <table border="1" width="400" height="150">
+      <tr>
+        <td>Dielectric Constant</td>
+        <td><span id="dc_value">"{{ post.P1DC }}"</span></td>
+      </tr>
+
+      <tr>
+        <td>Glass Transition Temperature</td>
+        <td><span id="gtt_value">"{{ post.P1GTT }}"</span></td>
+      </tr>
+    </table>
+
+    <!-- </div> -->
+  </div>
+  <div id="P_box">
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}P1.png"
+      alt=""
+      id="P_big"
+      class="big_img"
+    />
+    <br />
+    <h3>Product:</h3>
+    <p id="smiles">"{{ post.P1 }}"</p>
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}P1.png"
+      alt=""
+      class="P_small"
+      id="{{post.P1DC}}_{{post.P1GTT}}_{{post.P1}}"
+      onclick="showProperty(this)"
+    />
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}P2.png"
+      alt=""
+      class="P_small"
+      id="{{post.P2DC}}_{{post.P2GTT}}_{{post.P2}}"
+      onclick="showProperty(this)"
+    />
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}P3.png"
+      alt=""
+      class="P_small"
+      id="{{post.P3DC}}_{{post.P3GTT}}_{{post.P3}}"
+      onclick="showProperty(this)"
+    />
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}P4.png"
+      alt=""
+      class="P_small"
+      id="{{post.P4DC}}_{{post.P4GTT}}_{{post.P4}}"
+      onclick="showProperty(this)"
+    />
+    <img
+      src="/static/images/{{post.id}}/{{post.utctime}}P5.png"
+      alt=""
+      class="P_small"
+      id="{{post.P5DC}}_{{post.P5GTT}}_{{post.P5}}"
+      onclick="showProperty(this)"
+    />
+    <br />
+    <p>Tips: click product of interest.</p>
+    <br />
+  </div>
+</div>
+{% endif %}
+<br />
+
+<a class="btn btn-secondary" href="/posts">Back</a>
+ <a class="btn btn-secondary" href="/posts/edit/{{post.id}}">Edit</a>
+
+<!-- <input class="btn btn-success" type="submit" value="Analysis" /> -->
+<!-- <button
+  class="btn btn-success"
+  id="/static/images/{{post.id}}/{{post.utctime}}"
+  onclick="show_structures(this)"
+>
+  Analysis
+</button> -->
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block head %}
+<title>Posts</title>
+{% endblock %} {% block body %}
+<br />
+<div>
+  <h1 style="display: inline;">Reaction history</h1>
+  <a
+    style="display: inline;"
+    class="btn btn-success float-right"
+    href="/posts/new"
+    >+ New reaction</a
+  >
+</div>
+{% for post in posts %}
+<hr />
+<h3>Reaction ID: {{post.id}}</h3>
+<small>Reacted on {{post.utctime}}</small>
+<br />
+<br />
+<p>Reactant one: {{post.R1}}</p>
+<p>Reactant two: {{post.R2}}</p>
+<p>Product 1: {{post.P1}}</p>
+<p>Product 2: {{post.P2}}</p>
+<p>Product 3: {{post.P3}}</p>
+<p>Product 4: {{post.P4}}</p>
+<p>Product 5: {{post.P5}}</p>
+<p style="white-space: pre-wrap;">Note: {{post.note}}</p>
+<a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
+<a class="btn btn-secondary" href="/posts/edit/{{post.id}}">Edit</a>
+<a class="btn btn-info" href="/posts/info/{{post.id}}">Info</a>
+{% endfor %}
+<br />
+{% endblock %}

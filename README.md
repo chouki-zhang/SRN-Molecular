@@ -25,6 +25,9 @@ The following table list some core packages required.
 | `plotly`       | 4.5.0      |
 
 ## Usage
+The deeplearning model is too large to upload here, please download from the following url and place it in "./models/transformer_models/"
+
+https://drive.google.com/file/d/1H45ltTmp0j4WMahybbZxZv4918HKGblc/view?usp=sharing
 
 Launch web on your server by the following command:
 
